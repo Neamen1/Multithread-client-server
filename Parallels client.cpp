@@ -9,7 +9,7 @@
 
 using namespace std;
 
-#pragma comment(lib, "ws2_32.lib") // Зв'язок з бібліотекою Winsock
+#pragma comment(lib, "ws2_32.lib") // Г‡Гў'ГїГ§Г®ГЄ Г§ ГЎВіГЎГ«ВіГ®ГІГҐГЄГ®Гѕ Winsock
 
 void initializeWinsock() {
     WSADATA wsaData;
@@ -116,7 +116,7 @@ bool performHandshake(SOCKET sock) {
 
 struct MessageHeader {
     uint8_t type;
-    uint32_t size; // Розмір матриці у одиницях
+    uint32_t size; // ГђГ®Г§Г¬ВіГ° Г¬Г ГІГ°ГЁГ¶Ві Гі Г®Г¤ГЁГ­ГЁГ¶ГїГµ
 };
 
 enum MessageType {
@@ -131,7 +131,7 @@ bool sendHeader(SOCKET sock, uint32_t size, MessageType type) {
     header.type = type; // e.g. REQUEST_MATRIX
     header.size = size;
 
-    // Відправка заголовка
+    // Г‚ВіГ¤ГЇГ°Г ГўГЄГ  Г§Г ГЈГ®Г«Г®ГўГЄГ 
     int sent = send(sock, reinterpret_cast<char*>(&header), sizeof(header), 0);
     if (sent == SOCKET_ERROR) {
         return false;
@@ -230,7 +230,7 @@ void userInteractionLoop(SOCKET sock) {
             return;
         }
 
-        // Відправлення матриці
+        // Г‚ВіГ¤ГЇГ°Г ГўГ«ГҐГ­Г­Гї Г¬Г ГІГ°ГЁГ¶Ві
         for (auto& row : matrix) {
             if (!sendMatrixRow(sock, row)) {
                 cerr << "Failed to send matrix row." << endl;
@@ -281,7 +281,7 @@ int main() {
     initializeWinsock();
 
     SOCKET sock = createSocket();
-    connectToServer(sock, "127.0.0.1", 12345); // Підключення до сервера за адресою 127.0.0.1 і портом 12345
+    connectToServer(sock, "127.0.0.1", 12345); // ГЏВіГ¤ГЄГ«ГѕГ·ГҐГ­Г­Гї Г¤Г® Г±ГҐГ°ГўГҐГ°Г  Г§Г  Г Г¤Г°ГҐГ±Г®Гѕ 127.0.0.1 Ві ГЇГ®Г°ГІГ®Г¬ 12345
 
     if (!performHandshake(sock)) {
         cerr << "Handshake failed." << endl;
