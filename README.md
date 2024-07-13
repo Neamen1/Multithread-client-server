@@ -49,7 +49,10 @@ The project is structured into two main components:
 - Client: Provides a simple command-line interface for users to connect to the server, send messages, and display responses.
 
 ## Screenshots
-[Server and 4 clients working simultaneously](https://github.com/user-attachments/assets/bc5d054b-4116-49c1-9ba8-83539db22fe9)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/bc5d054b-4116-49c1-9ba8-83539db22fe9" alt="Server and 4 clients working simultaneously"/>
+  <p>Figure 1: Server and 4 clients working simultaneously</p>
+</div>
 
 ## Contact
 - [Oleksii](mailto:o.rakytskyi@gmail.com)
