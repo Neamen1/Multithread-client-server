@@ -25,18 +25,18 @@ This project implements a multithreaded client-server application in C++ for the
 ## Usage
 1. **Clone the Repository**:
    ```sh
-   git clone https://github.com/Neamen1/Multithread-client-server.git
+      git clone https://github.com/Neamen1/Multithread-client-server.git
    ```
 2. Build the Project:
   - Open the project in Visual Studio.
   - Build the solution to compile both the client and server applications.
 
 3. Run the Server:
-  - Navigate to the server executable (usually found in the Server\Debug or Server\Release folder).
+  - Navigate to the server executable.
   - Run the executable to start the server.
 
 4. Run the Client:
-  - Navigate to the client executable (usually found in the Client\Debug or Client\Release folder).
+  - Navigate to the client executable.
   - Run the executable to start the client.
 
 5. Interact with the Client-Server Application:
